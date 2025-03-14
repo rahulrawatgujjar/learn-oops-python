@@ -1,4 +1,4 @@
-# Learn about methods
+# Create a ElectricCar class that inherit from Car class and has an additional attribute battery_size
 
 class Car:
 
@@ -6,19 +6,21 @@ class Car:
     self.brand=brand
     self.model=model
 
-  # Method:
-  """
-  It is a function which is called for an object of class
-  """
   def fullName(self):
     return f"{self.brand} {self.model}"
   
 
 
+class ElectricCar(Car):
+
+  def __init__(self,brand,model,battery_size):
+    super().__init__(brand,model)
+    self.battery_size=battery_size
+
 
 if __name__=="__main__":
-
-  my_car=Car("Toyota","Fortuner")
-  print(my_car.brand)         # Toyota
-  print(my_car.model)         # Fortuner
-  print(my_car.fullName())    # Toyota Fortuner
+  myCar=ElectricCar("Tesla","Model S","100kWh")
+  print(myCar.brand)            # Tesla
+  print(myCar.battery_size)     # 100kWh
+  print(myCar.fullName())       # Tesla Model S
+  
