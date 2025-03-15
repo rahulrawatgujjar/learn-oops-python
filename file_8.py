@@ -35,6 +35,10 @@ class Car:
       raise ValueError("Model name must be at least 3 characters long")
     self._model=value
 
+  @model.deleter
+  def model(self):
+    self._model=None
+
 
 
 class ElectricCar(Car):
@@ -54,7 +58,10 @@ if __name__=="__main__":
   hisCar.model="Nexon"
   print(hisCar.model)       # Nexon     (now we are not getting attribute error)
 
-  hisCar.model="ev"         # ValueError: Model name must be at least 3 characters long
+  # hisCar.model="ev"         # ValueError: Model name must be at least 3 characters long
+
+  del hisCar.model
+  print(hisCar.model)       # None
 
 
 
