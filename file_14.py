@@ -39,8 +39,8 @@ class D(B,C):
     print("Method D")
 
 #  B and C inherit from A, so hierarchical.
-#  D inherit from B and D, so multiple.
-#  D inherit from B and D, which in turn inherit from A, so multilevel.
+#  D inherit from B and C, so multiple.
+#  D inherit from B and C, which in turn inherit from A, so multilevel.
 
 
 d = D()
